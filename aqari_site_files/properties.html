@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>العقارات</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>العقارات</h1>
+<a href="index.html">الرئيسية</a>
+</header>
+
+<input id="search" placeholder="بحث بالمدينة..." onkeyup="filterCards()">
+
+<div id="list" class="grid"></div>
+
+<script>
+
+const api = 'https://script.google.com/macros/s/AKfycbwiUPVA2drkD3qfpi5PIIMm6KGxtRpnwCGKmw1GEGn4hsbDBbeqrVmQhfZafeaQw-l9/exec'
+
+fetch(api)
+.then(r=>r.json())
+.then(data=>{
+const container = document.getElementById("list")
+
+data.filter(p=>p.status=="Approved").forEach(p=>{
+
+const msg = encodeURIComponent("استفسار عن العقار: "+p.title)
+const wa = "https://wa.me/966533172872?text="+msg
+
+const card = `
+<div class="card">
+<h3>${p.title}</h3>
+<p>${p.city} - ${p.district}</p>
+<p>${p.price} ريال</p>
+
+<a class="btn" href="${p.maps_url}" target="_blank">الخريطة</a>
+<a class="btn" href="${wa}" target="_blank">واتساب</a>
+
+</div>
+`
+container.innerHTML += card
+
+})
+})
+
+function filterCards(){
+const s=document.getElementById("search").value.toLowerCase()
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display = c.innerText.toLowerCase().includes(s) ? "block":"none"
+})
+}
+
+</script>
+
+</body>
+</html>
