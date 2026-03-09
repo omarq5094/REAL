@@ -12,20 +12,31 @@ async function api(action, payload = {}, method = "POST") {
     if (method === "GET") {
       const url = new URL(API_URL);
       url.searchParams.set("action", action);
-      Object.entries(payload).forEach(([k,v]) => {
+      Object.entries(payload).forEach(([k, v]) => {
         if (v !== undefined && v !== null) url.searchParams.set(k, v);
       });
-      const res = await fetch(url);
+
+      const res = await fetch(url.toString());
       return await res.json();
     }
+
+    const formBody = new URLSearchParams();
+    formBody.append("action", action);
+
+    Object.entries(payload).forEach(([k, v]) => {
+      if (v !== undefined && v !== null) {
+        formBody.append(k, v);
+      }
+    });
+
     const res = await fetch(API_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action, ...payload })
+      body: formBody
     });
+
     return await res.json();
   } catch (error) {
-    return { success:false, message:error.message };
+    return { success: false, message: error.message };
   }
 }
 
