@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إضافة عقار | عقاري</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">عقاري</a>
+      <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="properties.html">العقارات</a>
+        <a href="add-property.html" class="active">إضافة عقار</a>
+        <a href="my-properties.html">عقاراتي</a>
+        <a href="admin.html">لوحة الأدمن</a>
+        <a href="login.html" id="navAuthLink">دخول</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container form-container wide">
+      <div class="form-card">
+        <span class="eyebrow">إضافة جديدة</span>
+        <h1>أضف عقارك للمراجعة</h1>
+        <p class="muted">سيتم إرسال العقار بحالة Pending حتى يراجعه المكتب من لوحة الأدمن.</p>
+        <form id="propertyForm" class="form-grid two-cols">
+          <div>
+            <label>عنوان العقار</label>
+            <input class="input" name="title" required placeholder="أرض سكنية للبيع" />
+          </div>
+          <div>
+            <label>النوع</label>
+            <input class="input" name="category" required placeholder="أرض / فيلا / عمارة" />
+          </div>
+          <div>
+            <label>المدينة</label>
+            <input class="input" name="city" required placeholder="مكة" />
+          </div>
+          <div>
+            <label>الحي</label>
+            <input class="input" name="district" required placeholder="الشرائع" />
+          </div>
+          <div>
+            <label>المساحة</label>
+            <input class="input" name="area" required placeholder="600" />
+          </div>
+          <div>
+            <label>السعر</label>
+            <input class="input" name="price" required placeholder="450000" />
+          </div>
+          <div class="full">
+            <label>الوصف</label>
+            <textarea class="input textarea" name="description" required placeholder="وصف واضح للعقار"></textarea>
+          </div>
+          <div class="full">
+            <label>رابط Google Maps</label>
+            <input class="input" name="maps_url" required placeholder="https://maps.google.com/?q=..." />
+          </div>
+          <button class="btn btn-primary full" type="submit">إرسال العقار</button>
+        </form>
+        <div id="propertyMessage"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    initLayout();
+    initAddPropertyPage();
+  </script>
+</body>
+</html>

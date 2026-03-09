@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>العقارات | عقاري</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">عقاري</a>
+      <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="properties.html" class="active">العقارات</a>
+        <a href="add-property.html">إضافة عقار</a>
+        <a href="my-properties.html">عقاراتي</a>
+        <a href="admin.html">لوحة الأدمن</a>
+        <a href="login.html" id="navAuthLink">دخول</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">العقارات المعتمدة</span>
+          <h1>ابحث عن الفرصة المناسبة</h1>
+        </div>
+      </div>
+
+      <div class="filters-bar">
+        <input id="searchInput" class="input" placeholder="ابحث بالعنوان أو المدينة أو الحي" />
+        <select id="cityFilter" class="input">
+          <option value="">كل المدن</option>
+        </select>
+        <select id="categoryFilter" class="input">
+          <option value="">كل الأنواع</option>
+        </select>
+        <select id="priceFilter" class="input">
+          <option value="">كل الأسعار</option>
+          <option value="lt500">أقل من 500 ألف</option>
+          <option value="500to1000">من 500 ألف إلى مليون</option>
+          <option value="gt1000">أكثر من مليون</option>
+        </select>
+      </div>
+
+      <div id="propertiesGrid" class="cards-grid"></div>
+      <div id="propertiesEmpty" class="empty-state hidden">لا توجد عقارات مطابقة حاليًا.</div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    initLayout();
+    initPropertiesPage();
+  </script>
+</body>
+</html>

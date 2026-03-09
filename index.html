@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عقاري</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">عقاري</a>
+      <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="properties.html">العقارات</a>
+        <a href="add-property.html">إضافة عقار</a>
+        <a href="my-properties.html">عقاراتي</a>
+        <a href="admin.html">لوحة الأدمن</a>
+        <a href="login.html" id="navAuthLink">دخول</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-home">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">منصة عقارية احترافية</span>
+          <h1>اعرض عقارك. راجع الطلبات. أدر المنصة من مكان واحد.</h1>
+          <p class="lead">
+            عقاري يجمع بين تجربة عرض عقاري فاخرة، ونظام مراجعة قبل النشر،
+            ولوحة إدارة عملية للمكتب العقاري.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="properties.html">تصفح العقارات</a>
+            <a class="btn btn-secondary" href="add-property.html">أضف عقارك</a>
+          </div>
+          <div class="stats">
+            <div class="stat-card">
+              <strong id="approvedCount">0</strong>
+              <span>عقار معتمد</span>
+            </div>
+            <div class="stat-card">
+              <strong id="pendingCount">0</strong>
+              <span>طلب تحت المراجعة</span>
+            </div>
+          </div>
+        </div>
+        <div class="glass-panel">
+          <h3>لماذا هذا النظام مفيد؟</h3>
+          <ul class="feature-list">
+            <li>اعتماد العقارات قبل النشر لرفع الثقة.</li>
+            <li>البحث والفلترة وتجربة استخدام واضحة.</li>
+            <li>إدارة المستخدمين والعقارات من داخل الموقع.</li>
+            <li>زر واتساب المكتب مع رسالة تلقائية ذكية.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">أحدث العقارات</span>
+            <h2>عقارات معتمدة جاهزة للاستعراض</h2>
+          </div>
+          <a class="btn btn-ghost" href="properties.html">عرض الكل</a>
+        </div>
+        <div id="featuredProperties" class="cards-grid"></div>
+      </div>
+    </section>
+
+    <section class="section alt-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">آلية العمل</span>
+            <h2>Workflow واضح من الإضافة حتى النشر</h2>
+          </div>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-no">01</span>
+            <h3>المستخدم يضيف عقاره</h3>
+            <p>من خلال نموذج واضح داخل الموقع بدون الحاجة للدخول إلى Google Sheets.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-no">02</span>
+            <h3>العقار يدخل تحت المراجعة</h3>
+            <p>يظهر للأدمن داخل لوحة الإدارة بحالة Pending مع كل البيانات المهمة.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-no">03</span>
+            <h3>الأدمن يعتمد أو يرفض</h3>
+            <p>بضغطة زر ينتقل العقار إلى الصفحة العامة أو يبقى مرفوضًا.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <div>
+        <strong>عقاري</strong>
+        <p>منصة عقارية عربية بواجهة داكنة فاخرة وتجربة تشغيل عملية.</p>
+      </div>
+      <div class="footer-links">
+        <a href="properties.html">العقارات</a>
+        <a href="register.html">إنشاء حساب</a>
+        <a href="admin.html">لوحة الأدمن</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    initLayout();
+    loadHomeStats();
+    loadFeaturedProperties();
+  </script>
+</body>
+</html>
