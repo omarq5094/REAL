@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عقاري</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">عقاري</a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">الرئيسية</a>
+        <a href="properties.html">العقارات</a>
+        <a href="add-property.html">إضافة عقار</a>
+        <a href="my-properties.html">عقاراتي</a>
+        <a href="admin.html">لوحة الأدمن</a>
+        <a href="login.html" id="navAuthLink">دخول</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">منصة عقارية احترافية</span>
+          <h1>منصة داكنة فاخرة لإدارة العقارات والمستخدمين والمراجعات</h1>
+          <p class="lead">
+            اعرض العقارات المعتمدة، أرسل طلبات جديدة للمراجعة، واسمح للأدمن بإدارة
+            المستخدمين والعقارات من داخل الموقع.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="properties.html">تصفح العقارات</a>
+            <a class="btn btn-secondary" href="add-property.html">أضف عقارك</a>
+          </div>
+          <div class="stats">
+            <div class="stat-card">
+              <strong id="approvedCount">0</strong>
+              <span>عقار معتمد</span>
+            </div>
+            <div class="stat-card">
+              <strong id="pendingCount">0</strong>
+              <span>تحت المراجعة</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>ماذا يقدم لك النظام؟</h3>
+          <ul class="feature-list">
+            <li>فلترة وبحث سريع داخل العقارات المعتمدة.</li>
+            <li>تسجيل مستخدمين برقم الجوال وكلمة المرور.</li>
+            <li>لوحة أدمن لإدارة الصلاحيات والعقارات.</li>
+            <li>قبول ورفض وحذف العقارات من داخل الموقع.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">أحدث العقارات</span>
+            <h2>عقارات معتمدة وجاهزة للاستعراض</h2>
+          </div>
+          <a class="btn btn-ghost" href="properties.html">عرض الكل</a>
+        </div>
+        <div id="featuredProperties" class="cards-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <div>
+        <strong>عقاري</strong>
+        <p>نسخة تشغيلية محسنة مرتبطة مع Google Sheets + Apps Script.</p>
+      </div>
+      <div class="footer-links">
+        <a href="properties.html">العقارات</a>
+        <a href="register.html">تسجيل</a>
+        <a href="admin.html">الأدمن</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    initLayout();
+    loadHomeStats();
+    loadFeaturedProperties();
+  </script>
+</body>
+</html>

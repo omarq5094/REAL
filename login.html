@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دخول | عقاري</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">عقاري</a>
+      <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="properties.html">العقارات</a>
+        <a href="register.html">تسجيل</a>
+        <a href="login.html" class="active">دخول</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container form-container">
+      <div class="form-card">
+        <span class="eyebrow">تسجيل الدخول</span>
+        <h1>دخول المستخدم</h1>
+        <form id="loginForm" class="form-grid">
+          <div>
+            <label>رقم الجوال</label>
+            <input class="input" name="phone" required placeholder="05xxxxxxxx" />
+          </div>
+          <div>
+            <label>كلمة المرور</label>
+            <input class="input" type="password" name="password" required placeholder="••••••••" />
+          </div>
+          <button class="btn btn-primary full" type="submit">دخول</button>
+        </form>
+        <div id="loginMessage"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    initLayout();
+    initLoginPage();
+  </script>
+</body>
+</html>
